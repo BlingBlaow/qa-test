@@ -1,6 +1,6 @@
 import requests
 import pytest
-from test_data import reserse_geocoding_data
+from test_data import reverse_geocoding_data
 
 # Строка User-Agent
 USER_AGENT = "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/96.0.4664.110 Safari/537.36"
@@ -12,7 +12,7 @@ BASE_URL_REVERSE = "https://nominatim.openstreetmap.org/reverse"
 class TestReverseNominatimGeocoding:
 
     @pytest.mark.parametrize(
-        "lat, lon, expected_address_fragment", reserse_geocoding_data
+        "lat, lon, expected_address_fragment", reverse_geocoding_data
     )
     def test_reverse_geocoding(self, lat, lon, expected_address_fragment):
         params = {"lat": lat, "lon": lon, "format": "json"}
@@ -50,6 +50,7 @@ class TestReverseNominatimGeocoding:
         assert (
             expected_address_fragment in address_str
         ), f"Данный адрес не найден для {lat}, {lon}"
+
 
 
 if __name__ == "__main__":

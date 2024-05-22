@@ -12,7 +12,7 @@ forward_geocoding_data = [
     ("Собор Василия Блаженного, Москва", "55.752523", "37.623087"),
 ]
 
-reserse_geocoding_data = [
+reverse_geocoding_data = [
     ("55", "37", "Россия"),
     ("51", "-0.1", "United Kingdom"),
     ("40.0", "-74", "United States"),
